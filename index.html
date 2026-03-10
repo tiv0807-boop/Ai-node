@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Node Investor Memo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Inter;
+background:#05070c;
+color:#e5e7eb;
+margin:0;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1{
+font-size:32px;
+margin-bottom:8px;
+}
+
+h2{
+font-size:22px;
+margin-top:40px;
+margin-bottom:15px;
+color:#9ca3af;
+}
+
+p{
+color:#9ca3af;
+font-size:14px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-top:20px;
+}
+
+.card{
+background:#0f172a;
+padding:18px;
+border-radius:10px;
+border:1px solid #1f2937;
+}
+
+.metric{
+font-size:22px;
+font-weight:700;
+color:#60a5fa;
+}
+
+.metric-label{
+font-size:12px;
+color:#6b7280;
+margin-top:5px;
+}
+
+.table{
+margin-top:20px;
+border:1px solid #1f2937;
+border-radius:10px;
+overflow:hidden;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 14px;
+border-bottom:1px solid #1f2937;
+font-size:14px;
+}
+
+.row:last-child{
+border-bottom:none;
+}
+
+.highlight{
+color:#facc15;
+font-weight:600;
+}
+
+.chart{
+margin-top:30px;
+background:#0f172a;
+padding:20px;
+border-radius:10px;
+border:1px solid #1f2937;
+}
+
+.footer{
+margin-top:40px;
+font-size:12px;
+color:#6b7280;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI-NODE</h1>
+<p>GPU Infrastructure for AI / Render Network</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="metric">1.227M ₽</div>
+<div class="metric-label">CAPEX / Node</div>
+</div>
+
+<div class="card">
+<div class="metric">85k ₽</div>
+<div class="metric-label">Profit / month</div>
+</div>
+
+<div class="card">
+<div class="metric">14.4 mo</div>
+<div class="metric-label">ROI</div>
+</div>
+
+<div class="card">
+<div class="metric">24 Nodes</div>
+<div class="metric-label">Scale Plan</div>
+</div>
+
+</div>
+
+
+<h2>Hardware configuration</h2>
+
+<div class="table">
+
+<div class="row">
+<span>GPU</span>
+<span class="highlight">2× RTX 5090</span>
+</div>
+
+<div class="row">
+<span>Memory</span>
+<span>128GB SK hynix ECC</span>
+</div>
+
+<div class="row">
+<span>CPU</span>
+<span>Xeon Gold 6526Y</span>
+</div>
+
+<div class="row">
+<span>Motherboard</span>
+<span>Supermicro X13SWA-TF</span>
+</div>
+
+<div class="row">
+<span>Storage</span>
+<span>2TB NVMe Gen5</span>
+</div>
+
+<div class="row">
+<span>Total CAPEX</span>
+<span class="highlight">1 227 360 ₽</span>
+</div>
+
+</div>
+
+
+<h2>Monthly Economics</h2>
+
+<div class="chart">
+
+<canvas id="profitChart"></canvas>
+
+</div>
+
+
+<h2>Farm scaling (24 servers)</h2>
+
+<div class="chart">
+
+<canvas id="scaleChart"></canvas>
+
+</div>
+
+
+<div class="footer">
+
+AI-Node · Render Network Infrastructure  
+Location: Novosibirsk / Moscow  
+
+Telegram: —  
+Email: ai-node@proton.me  
+
+</div>
+
+</div>
+
+
+<script>
+
+new Chart(document.getElementById("profitChart"),{
+
+type:"bar",
+
+data:{
+labels:["Revenue","Expenses","Net Profit"],
+
+datasets:[{
+
+data:[89800,4600,85200]
+
+}]
+
+},
+
+options:{
+plugins:{
+legend:{display:false}
+},
+scales:{
+y:{beginAtZero:true}
+}
+
+}
+
+})
+
+
+new Chart(document.getElementById("scaleChart"),{
+
+type:"line",
+
+data:{
+
+labels:["1 Node","6 Nodes","12 Nodes","24 Nodes"],
+
+datasets:[{
+
+data:[85200,511200,1022400,1945000]
+
+}]
+
+},
+
+options:{
+plugins:{
+legend:{display:false}
+}
+
+}
+
+})
+
+</script>
+
+</body>
+</html>
