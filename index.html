@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-NODE · финальный меморандум</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f4f7fb;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 16px;
+        }
+        .document {
+            max-width: 960px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            padding: 40px 44px;
+            border-radius: 4px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0a1a2b;
+            margin-bottom: 4px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #3e5a7a;
+            border-bottom: 1px solid #d0ddee;
+            padding-bottom: 6px;
+            margin: 28px 0 16px 0;
+        }
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f3a5f;
+            margin-bottom: 12px;
+        }
+        .kpi-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            font-weight: 600;
+            color: #0a2942;
+            line-height: 1.2;
+        }
+        .kpi-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #5f6f87;
+            letter-spacing: 0.03em;
+        }
+        .badge {
+            background: #e6eef9;
+            color: #214973;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 30px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e7ecf3;
+        }
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+        .metric-label {
+            color: #3b4d64;
+            font-size: 13px;
+        }
+        .metric-value {
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #102331;
+        }
+        .highlight-value {
+            color: #1e4d8f;
+            font-weight: 700;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background: #fafcff;
+            border: 1px solid #dae3f0;
+            border-radius: 6px;
+            padding: 18px 18px;
+        }
+        .graph-container {
+            background: #f3f7fc;
+            border-radius: 6px;
+            padding: 20px 16px;
+            border: 1px solid #cbd6e6;
+            margin-top: 12px;
+        }
+        .graph-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 8px 0;
+        }
+        .bar-label {
+            width: 45px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #31567c;
+        }
+        .bar-fill-bg {
+            flex: 1;
+            height: 16px;
+            background: #dbe4f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 16px;
+            background: #2b5580;
+            border-radius: 12px;
+        }
+        .bar-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #1f3e64;
+        }
+        .footnote {
+            font-size: 11px;
+            color: #6a7d9b;
+            margin-top: 24px;
+            border-top: 1px dashed #ccd9ec;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="document">
+
+    <!-- ШАПКА -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+            <h1>AI‑NODE</h1>
+            <div style="color: #526f96; font-size: 14px;">Render Network · GPU infrastructure</div>
+        </div>
+        <div style="text-align: right;">
+            <span class="badge">март 2026</span>
+            <span class="badge" style="margin-left: 8px;">финальный меморандум</span>
+        </div>
+    </div>
+
+    <!-- КЛЮЧЕВЫЕ ПОКАЗАТЕЛИ -->
+    <div class="grid-4" style="margin: 8px 0 16px;">
+        <div><span class="kpi-label">capex / сервер</span><div class="kpi-number">1,227 млн ₽</div></div>
+        <div><span class="kpi-label">чистая прибыль/сервер</span><div class="kpi-number">85 200 ₽</div><span style="font-size:11px; color:#556e8b;">в месяц</span></div>
+        <div><span class="kpi-label">окупаемость</span><div class="kpi-number">14,4 мес</div></div>
+        <div><span class="kpi-label">ROI годовая</span><div class="kpi-number">83%</div></div>
+    </div>
+
+    <!-- ========== ФИНАЛЬНЫЙ СПИСОК ПОКУПОК (ИЗ ЧАТА) ========== -->
+    <h2>01 · спецификация одного сервера</h2>
+    <div class="card" style="margin-bottom: 24px;">
+        <div class="metric-row"><span class="metric-label">1. Видеокарта: Palit RTX 5090 32GB GAMEROCK OC (2 шт.)</span> <span class="metric-value">600 000 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">2. Процессор: Intel Xeon Gold 6526Y (16 ядер, 32 потока)</span> <span class="metric-value">151 712 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">3. Оперативная память: SK hynix 64GB DDR5 RDIMM ECC (2 шт.)</span> <span class="metric-value">290 000 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">4. Материнская плата: Supermicro MBD-X13SWA-TF</span> <span class="metric-value">102 828 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">5. Блок питания: Silverstone HELA 2050R Platinum</span> <span class="metric-value">45 480 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">6. Накопитель: Samsung 9100 PRO 2TB NVMe</span> <span class="metric-value">29 000 ₽</span></div>
+        <div class="metric-row"><span class="metric-label">7. Корпус: Exegate Pro 4U4132</span> <span class="metric-value">8 340 ₽</span></div>
+        <div class="metric-row" style="border-top: 2px solid #1f3f6a; margin-top: 12px; padding-top: 12px;">
+            <span class="metric-label" style="font-weight:700;">ИТОГО CAPEX на 1 сервер</span>
+            <span class="metric-value" style="font-weight:700;">1 227 360 ₽</span>
+        </div>
+    </div>
+
+    <!-- ОПЕРАЦИОННЫЕ РАСХОДЫ (1 СЕРВЕР) -->
+    <div class="grid-2" style="gap: 24px;">
+        <div class="card">
+            <h3>Операционные расходы (мес.)</h3>
+            <div class="metric-row"><span>Электричество (0,9 кВт·ч × 720ч × 5,5₽)</span> <span>3 564 ₽</span></div>
+            <div class="metric-row"><span>Интернет (доля от 10G/45k)</span> <span>1 000 ₽</span></div>
+            <div class="metric-row"><span>Обслуживание/резерв</span> <span>—</span></div>
+            <div class="metric-row" style="border-top:1px solid #ccc;"><span>Итого OPEX</span> <span class="highlight-value">≈4 600 ₽</span></div>
+        </div>
+        <div class="card" style="background:#f0f5fe;">
+            <div style="display: flex; justify-content: space-between;">
+                <span class="kpi-label">чистая прибыль / мес</span>
+                <span class="kpi-number" style="font-size:22px;">85 200 ₽</span>
+            </div>
+            <div style="font-size:12px; color:#274873;">при утилизации 90% и ставке $0.90/час (RENDER $1.40)</div>
+        </div>
+    </div>
+
+    <!-- ЭКОНОМИКА + ГРАФИК -->
+    <h2>02 · юнит-экономика Render Network</h2>
+    <div class="grid-2" style="gap: 28px;">
+        <div>
+            <div class="metric-row"><span>Ставка за RTX 5090</span> <span class="metric-value">$0.90/час</span></div>
+            <div class="metric-row"><span>Часов работы / мес</span> <span class="metric-value">720</span></div>
+            <div class="metric-row"><span>Утилизация (средняя по сети)</span> <span class="metric-value">90%</span></div>
+            <div class="metric-row"><span>Выручка брутто</span> <span class="metric-value">89 800 ₽</span></div>
+            <div class="metric-row"><span>Операционные расходы</span> <span class="metric-value">4 600 ₽</span></div>
+            <div class="metric-row" style="border-top:1px solid #a0b8d4;"><span>Чистая прибыль</span> <span class="highlight-value">85 200 ₽/мес</span></div>
+        </div>
+        <div class="graph-container">
+            <h3 style="margin:0 0 14px;">чувствительность к цене RENDER</h3>
+            <div class="graph-bar"><span class="bar-label">$1.00</span><div class="bar-fill-bg"><div class="bar-fill" style="width:48%"></div></div><span class="bar-value">1,33 млн</span></div>
+            <div class="graph-bar"><span class="bar-label">$1.40</span><div class="bar-fill-bg"><div class="bar-fill" style="width:68%"></div></div><span class="bar-value">1,94 млн</span></div>
+            <div class="graph-bar"><span class="bar-label">$2.50</span><div class="bar-fill-bg"><div class="bar-fill" style="width:88%"></div></div><span class="bar-value">3,64 млн</span></div>
+            <div class="graph-bar"><span class="bar-label">$4.00</span><div class="bar-fill-bg"><div class="bar-fill" style="width:100%; background:#1f4a81;"></div></div><span class="bar-value">5,95 млн</span></div>
+            <div style="font-size:11px; margin-top:14px;">чистая прибыль 24 серверов, млн ₽/мес</div>
+        </div>
+    </div>
+
+    <!-- МАСШТАБИРОВАНИЕ 24 СЕРВЕРА -->
+    <h2>03 · кластер 24 сервера</h2>
+    <div class="grid-2">
+        <div class="card">
+            <div class="metric-row"><span>Инвестиции (24 сервера × 1,227 млн)</span> <span class="metric-value">29,45 млн ₽</span></div>
+            <div class="metric-row"><span>ГПУ‑30 + стойки + сеть</span> <span class="metric-value">+4,0 млн ₽</span></div>
+            <div class="metric-row" style="border-bottom:1px solid #b8cbe2;"><span>Общие CAPEX</span> <span class="metric-value">29,45 млн ₽</span></div>
+            <div class="metric-row"><span>Выручка 24 серверов</span> <span class="metric-value">2 155 000 ₽</span></div>
+            <div class="metric-row"><span>Газ (ГПУ‑30) + интернет 10G</span> <span class="metric-value">73 800 ₽</span></div>
+            <div class="metric-row"><span>Электричество + обслуживание</span> <span class="metric-value">135 500 ₽</span></div>
+            <div class="metric-row" style="border-top:1px solid #1f3f6a;"><span>Чистая прибыль / мес</span> <span class="metric-value" style="font-weight:700;">1 945 000 ₽</span></div>
+        </div>
+        <div class="card">
+            <h3>Подушка безопасности</h3>
+            <div class="metric-row"><span>Себестоимость 1 RENDER</span> <span class="metric-value">~6,5 ₽</span></div>
+            <div class="metric-row"><span>Break‑even цена RENDER</span> <span class="metric-value">$0.67</span></div>
+            <div class="metric-row"><span>Запас до убытка</span> <span class="metric-value">>50%</span></div>
+            <hr>
+            <div><span class="badge">газ 4₽/м³</span> <span class="badge">интернет 45k</span> <span class="badge">RTX 5090 290k</span></div>
+        </div>
+    </div>
+
+    <!-- ДИВЕРСИФИКАЦИЯ (из чата) -->
+    <h2>04 · резервные сети</h2>
+    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <div><span class="badge">Cocoon (TON) · Q2 2026</span></div>
+        <div><span class="badge">Gonka (GNK) · резерв</span></div>
+        <div><span class="badge">Akash · менее маржинально</span></div>
+    </div>
+
+    <!-- КОНТАКТЫ -->
+    <hr>
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #3e5f86; margin-top: 24px;">
+        <div>AI‑NODE · Новосибирск / Москва</div>
+        <div style="display: flex; gap: 24px;">
+            <span>tg: @ainode_capital</span>
+            <span>ai‑node@proton.me</span>
+        </div>
+    </div>
+    <div class="footnote">
+        * Расчёты основаны на финальных ценах из чата (SK hynix 145k/планка, Palit 5090 300k, Xeon 151k, Supermicro 102k), курсе 77 ₽/$, ставке Render $0.90/час, утилизации 90%. Прогнозы не гарантируют доходность.
+    </div>
+
+</div>
+</body>
+</html>
